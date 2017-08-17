@@ -1,0 +1,24 @@
+<h1><font size = "12", color="#00ff7f">PhotoSite User List</font></h1>
+<body background="http://www.hotpoint.ie/hotpoint/cooking_newstyle/ie_IE/images/backgrounds/background-ns-delay-timer.jpg">
+
+<font size="10", color="lime"> THERE ARE SIX USERS!</font>
+<br>
+<br>
+<table>
+  <trp>
+    <th> <font size = "6", color="#c71585">USER</font></th>
+    <th> <font size = "6", color="maroon">First Name</font></th>
+    <th> <font size = "6", color="maroon">Last Name</font></th>
+
+  </trp>
+  <% for user in @user %>
+  <tr>
+    <td><%= user.id %></td>
+    <td> <%= link_to user.first_name, controller: "photo", action: "index", id: user.id %></td>
+    <td> <%= user.last_name %></td>
+  </tr>
+<% end %>
+
+
+</table>
+</body>

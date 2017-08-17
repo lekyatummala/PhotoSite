@@ -1,0 +1,13 @@
+
+<% @comments.each do |comment| %>
+    <%= image_tag(comment.photo.file_name) %><br>
+    <table>
+
+     <tr> Commented by:<%= link_to comment.user.first_name, controller: "photo", action:"index", id: comment.user.id %> <a href="http://127.0.0.1:3000"><%= comment.user.last_name %></tr></a></tr><br>
+
+
+      <tr>Comments: <%= comment.comment_text%></tr><br>
+      <tr>Commented at: <%= comment.created_at %></tr><br>
+
+    </table>
+<% end %>
